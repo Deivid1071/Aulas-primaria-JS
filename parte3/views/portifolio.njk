@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Sen&display=swap">
+<title>Portifolio - Deivid Nascimento</title>
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">      
+      <h1>Aulas</h1>      
+    </div>  
+    
+    <section class="cards">
+      {% for item in items %}
+      <div class="card" id="{{item.id}}">
+        <div class="card__image_container">
+          <img src="../public/images/{{item.id}}.jpg" alt="">
+        </div>
+        <div class="card_content">
+          <p>{{item.title}}</p>
+        </div>
+        <div class="card_info">
+          <p>{{item.comentario1}}</p>
+          <p>{{item.comentario2}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    {% endblock %}
